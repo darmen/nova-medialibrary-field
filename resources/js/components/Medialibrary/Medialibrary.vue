@@ -1,5 +1,6 @@
 <template>
     <div :class="{ 'big-thumbnails': field.bigThumbnails }">
+        <UploadFiles :field="field"/>
 
         <SortFiles :files="sortedFiles" @sort="handleSort" :disabled="sortingDisabled" class="flex flex-wrap -m-2">
             <Resource v-for="file in sortedFiles" :file="file" :key="file.id" :field="field" class="p-2">
@@ -16,8 +17,6 @@
 
         <div v-if="files.length" class="border-b border-40 my-4"></div>
         <div v-else class="my-2"></div>
-
-        <UploadFiles :field="field"/>
     </div>
 </template>
 
